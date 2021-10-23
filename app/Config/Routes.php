@@ -49,6 +49,25 @@ $routes->patch('food', 'Food::update');
 $routes->delete('food', 'Food::delete');
 
 
+
+// Return all brand entries
+$routes->get('brand', 'Brand::index');
+
+// Return brand entry by ID number
+$routes->get('brand/id/(:segment)', 'Brand::show/$1');
+
+// Create brand entry
+$routes->post('brand', 'Brand::create');
+
+// Update brand entry
+$routes->patch('brand', 'Brand::update');
+
+// Delete brand entry
+$routes->delete('brand', 'Brand::delete');
+
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
