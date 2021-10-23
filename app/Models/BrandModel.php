@@ -28,25 +28,6 @@ class BrandModel extends Model
     // protected $skipValidation = false;
 
     protected $returnType = 'array';
-
-    protected $afterInsert = ['callAfterInsert'];
-
-    function callAfterInsert(array $data) {
-        // If the brand is a restaurant, we need to add to restuarant table
-        if(isset($data['brand_is_restaurant']))
-        {
-            // Create new instance of restaurant model
-            $restaurantModel = new \App\Models\RestaurantModel();
-
-            // Get brand ID from data
-            $request = [
-                'brand_id' => $data['brand_id']
-            ];
-
-            // Insert the brand_id 
-            $restaurantModel->insert($request);
-
-        }
     }
 
 
