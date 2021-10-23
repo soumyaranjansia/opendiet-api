@@ -53,8 +53,7 @@ class Brand extends ResourceController
         $brand = new BrandModel();
         $data = [
             'brand_name' =>                     $this->request->getVar('brand_name'),
-            'brand_is_restaurant' =>            $this->request->getVar('brand_is_restaruarnt'),
-            'restaruant_id' =>                  $this->request->getVar('restaurant_id')
+            'brand_is_restaurant' =>            $this->request->getVar('brand_is_restaurant'),
         ];
 
         $brand->insert($data);
