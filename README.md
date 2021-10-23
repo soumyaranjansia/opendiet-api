@@ -5,6 +5,11 @@
 The OpenDiet API is designed to provide a way for anyone to access nutritional information about food. It also allows authorized users to 
 add food entries to the database. 
 
+## Using the API
+There is a live development version at: https://dev.opendiet.io/
+For example, to get all food entries: HTTP GET https://dev.opendiet.io/food
+
+
 ## Installation & updates
 
 Copy the source code to your server and edit the ENV file to suit your setup. 
