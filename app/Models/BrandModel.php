@@ -28,8 +28,6 @@ class BrandModel extends Model
     // protected $skipValidation = false;
 
     protected $returnType = 'array';
-    }
-
 
 }
 
