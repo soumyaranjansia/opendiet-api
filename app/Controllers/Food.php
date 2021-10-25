@@ -125,7 +125,7 @@ class Food extends ResourceController
     }
 
     /**
-     * Get a food entries by name
+     * Get food entries by name
      * 
      * 
      * 
