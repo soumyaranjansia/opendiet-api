@@ -127,7 +127,7 @@ class Food extends ResourceController
     /**
      * Get a food entries by name
      * 
-     * @param int   $name
+     * 
      * 
      * @return array
      */
@@ -137,15 +137,37 @@ class Food extends ResourceController
             'food_name' =>                      $this->request->getVar('food_name')
         ];
 
-        // Use query builder for this
+        // Use query builder to select food entries with food name like request
         $builder = $food->builder();
         $builder->like('food_name', $data['food_name'])->orderBy('food_name', 'ASC');
-        $request = $builder->get()->getResult();
+        $result = $builder->get()->getResult();
 
-        if($request) {
-            return $this->respond($request);
+        if($result) {
+            return $this->respond($result);
         } else {
             return $this->failNotFound('No food entries exist with the supplied name.');
+        }
+    }
+
+    /**
+     * Get a food entries by name
+     * 
+     * 
+     * 
+     * @return array
+     */
+    public function getFoodEntriesByBrand() {
+        $food = new FoodModel();
+        $data = [
+            'brand_id' => $this->request->getVar('brand_id')
+        ];
+
+        $result = $food->where('brand_id', $data['brand_id'])->findAll();
+
+        if($result) {
+            return $this->respond($result);
+        } else {
+            return $this->failNotFound('No food entries with that brand ID was found');
         }
     }
     
