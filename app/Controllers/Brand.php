@@ -121,10 +121,7 @@ class Brand extends ResourceController
             'brand_name' =>                      $this->request->getVar('brand_name')
         ];
 
-        // Use query builder to select brand entries with brand name like request
-        $builder = $brand->builder();
-        $builder->like('brand_name', $data['brand_name'])->orderBy('brand_name', 'ASC');
-        $result = $builder->get()->getResult();
+        $result = $brand->like('brand_name', $data['brand_name'])->orderBy('brand_name', 'ASC')->findAll();
 
         if($result) {
             return $this->respond($result);
