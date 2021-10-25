@@ -123,4 +123,30 @@ class Food extends ResourceController
 
             return $this->respond($response, 501);
     }
+
+    /**
+     * Get a food entries by name
+     * 
+     * @param int   $name
+     * 
+     * @return array
+     */
+    public function getFoodEntriesByName() {
+        $food = new FoodModel();
+        $data = [
+            'food_name' =>                      $this->request->getVar('food_name')
+        ];
+
+        // Use query builder for this
+        $builder = $food->builder();
+        $builder->like('food_name', $data['food_name'])->orderBy('food_name', 'ASC');
+        $request = $builder->get()->getResult();
+
+        if($request) {
+            return $this->respond($request);
+        } else {
+            return $this->failNotFound('No food entries exist with the supplied name.');
+        }
+    }
+    
 }
