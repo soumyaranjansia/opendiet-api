@@ -115,7 +115,7 @@ class Brand extends ResourceController
      * 
      * @return array
      */
-    public function byBrandEntriesByName() {
+    public function getBrandEntriesByName() {
         $brand = new BrandModel();
         $data = [
             'brand_name' =>                      $this->request->getVar('brand_name')
