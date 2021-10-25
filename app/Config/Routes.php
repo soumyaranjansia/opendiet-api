@@ -39,6 +39,9 @@ $routes->get('food', 'Food::index');
 // Return food entry by ID number
 $routes->get('food/id/(:segment)', 'Food::show/$1');
 
+// Return food entries by name
+$routes->get('food/name', 'Food::getFoodEntriesByName');
+
 // Create food entry
 $routes->post('food', 'Food::create');
 
