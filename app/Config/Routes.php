@@ -62,6 +62,9 @@ $routes->get('brand', 'Brand::index');
 // Return brand entry by ID number
 $routes->get('brand/id/(:segment)', 'Brand::show/$1');
 
+// Return brand entreis by name
+$routes->get('brand/name', 'Brand::getBrandEntriesByName');
+
 // Create brand entry
 $routes->post('brand', 'Brand::create');
 

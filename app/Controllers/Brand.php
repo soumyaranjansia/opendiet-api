@@ -107,4 +107,30 @@ class Brand extends ResourceController
 
             return $this->respond($response, 501);
     }
+
+    /**
+     * Get brand entries by name
+     * 
+     * 
+     * 
+     * @return array
+     */
+    public function byBrandEntriesByName() {
+        $brand = new BrandModel();
+        $data = [
+            'brand_name' =>                      $this->request->getVar('brand_name')
+        ];
+
+        // Use query builder to select brand entries with brand name like request
+        $builder = $brand->builder();
+        $builder->like('brand_name', $data['brand_name'])->orderBy('brand_name', 'ASC');
+        $result = $builder->get()->getResult();
+
+        if($result) {
+            return $this->respond($result);
+        } else {
+            return $this->failNotFound('No brand entries exist with the supplied name.');
+        }
+    }
+
 }
