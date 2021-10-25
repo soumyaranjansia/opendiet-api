@@ -134,6 +134,26 @@ class Brand extends ResourceController
     }
 
     /**
+     * Get all restaurant entries
+     * 
+     * 
+     * 
+     * @return array
+     */
+    public function getRestaurantEntries() {
+        $brand = new BrandModel();
+
+        $result = $brand->where('brand_is_restaurant', '1')->findAll();
+
+        if($result) {
+            return $this->respond($result);
+        } else {
+            return $this->failNotFound('No restaurant entries exist with the supplied name.');
+        }
+    }
+
+
+    /**
      * Get restaurant entries by name
      * 
      * 

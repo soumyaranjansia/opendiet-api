@@ -65,6 +65,9 @@ $routes->get('brand/id/(:segment)', 'Brand::show/$1');
 // Return brand entreis by name
 $routes->get('brand/name', 'Brand::getBrandEntriesByName');
 
+// Return all brands that are restaurants
+$routes->get('brand/restaurant', 'Brand::getRestaurantEntries');
+
 // Return restaurant entries by name
 $routes->get('brand/restaurant/name', 'Brand::getRestaurantEntriesByName');
 
