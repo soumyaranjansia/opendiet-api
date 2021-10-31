@@ -70,6 +70,7 @@ class Brand extends ResourceController
         
     }
 
+    // TODO: Implement updating a brand entry
     /**
      * Update a brand entry
      * 
@@ -89,6 +90,7 @@ class Brand extends ResourceController
             return $this->respond($response, 501);
     }
 
+    // TODO: Implement deleting a brand entry
     /**
      * Delete a brand entry
      * 

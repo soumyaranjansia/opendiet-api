@@ -86,6 +86,7 @@ class Food extends ResourceController
         
     }
 
+    // TODO: Implement updating a food entry
     /**
      * Update a food entry
      * 
@@ -105,6 +106,7 @@ class Food extends ResourceController
             return $this->respond($response, 501);
     }
 
+    // TODO: Implement deleting a food entry
     /**
      * Delete a food entry
      * 

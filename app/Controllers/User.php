@@ -84,8 +84,8 @@ class User extends ResourceController
         
     }
 
-    
 
+    // TODO: Implement updating a user entry
     /**
      * Update a user entry
      * 
@@ -105,6 +105,7 @@ class User extends ResourceController
             return $this->respond($response, 501);
     }
 
+    // TODO: Implement delting a user entry
     /**
      * Delete a user entry
      * 
