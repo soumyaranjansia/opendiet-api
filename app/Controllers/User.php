@@ -125,6 +125,14 @@ class User extends ResourceController
             return $this->respond($response, 501);
     }
 
+    public function checkPublicKey($public_key) {
+        $user->where('user_public_key', $public_key)->first();
+        if($user) {
+            return true;
+        } else {
+            return false;
+        }
+    }
    
     
 }
