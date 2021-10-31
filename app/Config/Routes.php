@@ -81,6 +81,10 @@ $routes->patch('brand', 'Brand::update');
 $routes->delete('brand', 'Brand::delete');
 
 
+// Create a user entry
+$routes->post('user', 'User::create');
+
+
 
 
 /*

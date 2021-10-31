@@ -7,13 +7,12 @@ class UserModel extends Model
     protected $table = 'user';
     protected $primaryKey = 'user_id';
 
-    protected $useAutoIncrement = true;
+    protected $useAutoIncrement = false;
 
     protected $useSoftDeletes = true;
 
     protected $allowedFields = [
-        'user_username', 'user_password', 
-        'user_email', 'user_is_business',
+        'user_id', 'user_username',
         'user_privileges', 'user_public_key'
     ];
 
