@@ -89,6 +89,7 @@ class Food extends ResourceController
     // TODO: Implement updating a food entry
     /**
      * Update a food entry
+     *if you want to update the food, then write a query like that "update set var1='$var1',var2='$var2' where food_id='$food_id'"
      * 
      * 
      * 
@@ -102,7 +103,7 @@ class Food extends ResourceController
                 'error' =>  'Update is not yet implemented'
             ]
             ];
-
+            $food->update($data)->where('food_id')->food_id;
             return $this->respond($response, 501);
     }
 
